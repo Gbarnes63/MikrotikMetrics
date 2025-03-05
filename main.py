@@ -5,14 +5,22 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from client import Client
 from metrics import Metrics
 from influxDBManager import InfluxDBWriter
+import json
 
 # Define clients
 clients = [
-    Client("172.16.255.1", "Gb@m1kr0ut3r", "xxx", "cert_export_SSLTESTv2.crt"),
-    Client("10.0.0.2", "Gb@m1kr0ut3r", "xxx", "cert_export_SSLTESTv2.crt")
+  
 ]
 
-# InfluxDB configuration
+with open("clients.json",'r')as client_config:
+    client_configs = json.load(client_config)
+
+    for client in client_configs:
+
+        client_instance = Client(client['ip'],client['username'],client['password'],client['cert'])
+        clients.append(client_instance)
+
+
 influxdb_writer = InfluxDBWriter(url=os.getenv("INFLUXDB_URL"), token = os.getenv("INFLUXDB_TOKEN"), org=os.getenv("INFLUXDB_ORG"))
 
 async def collect_metrics(client):

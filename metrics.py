@@ -14,7 +14,6 @@ class Metrics:
             {'name': 'Facebook', 'address': 'facebook.com'},
             {'name': 'Quad9', 'address': '9.9.9.9'},
             {'name': 'MyDigitalOcean', 'address': '10.0.20.1'},
-            {'name': 'Webmasters-DNS', 'address': '196.10.148.37'},
             {'name': 'Cisco Primary DNS', 'address': '208.67.222.222'},
             {'name': 'Cisco Secondary DNS', 'address': '208.67.220.220'}
         ]
