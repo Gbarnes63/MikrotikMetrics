@@ -1,0 +1,14 @@
+[
+    {
+        "ip": "x.x.x.x",
+        "username": "aaaaaaaaaa",
+        "password": "bbbbbbbbbbb",
+        "cert": "cert1.crt"
+    },
+    {
+        "ip": "y.y.y.y",
+        "username": "ccccccccccc",
+        "password": "dddddddddd",
+        "cert": "cert2.crt"
+    }
+]
