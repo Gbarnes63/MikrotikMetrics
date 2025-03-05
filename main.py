@@ -1,4 +1,5 @@
 import asyncio
+import os
 import time
 from apscheduler.schedulers.background import BackgroundScheduler
 from client import Client
@@ -12,7 +13,7 @@ clients = [
 ]
 
 # InfluxDB configuration
-influxdb_writer = InfluxDBWriter(url="http://10.0.20.1:65440", token='xxx, org="Barnes-Net')
+influxdb_writer = InfluxDBWriter(url=os.getenv("INFLUXDB_URL"), token = os.getenv("INFLUXDB_TOKEN"), org=os.getenv("INFLUXDB_ORG"))
 
 async def collect_metrics(client):
     metrics_collector = Metrics(client)
