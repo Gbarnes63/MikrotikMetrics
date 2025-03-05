@@ -3,7 +3,7 @@ import time
 from apscheduler.schedulers.background import BackgroundScheduler
 from client import Client
 from metrics import Metrics
-from influxdbHandler import InfluxDBWriter
+from influxDBManager import InfluxDBWriter
 
 # Define clients
 clients = [
